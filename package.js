@@ -4,7 +4,7 @@ Package.describe({
   name: 'universe:desktop-app',
   version: VERSION,
   summary: 'Package your Meteor apps with Electron, and butter. Updated version',
-  git: 'https://github.com/arboleya/desktop',
+  git: 'https://github.com/universe/desktop',
   documentation: 'README.md'
 });
 

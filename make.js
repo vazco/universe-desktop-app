@@ -34,7 +34,7 @@ target.setup = function() {
     cwd: parent
   }).on('exit', function(){
 
-    // links arboleya:desktop inside meteor
+    // links universe:desktop inside meteor
     shell.mkdir('-p', packages_dir);
     shell.ln('-s', __dirname, path.join(packages_dir, 'universe:desktop-app'));
 

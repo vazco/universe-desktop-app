@@ -47,7 +47,7 @@ describe('[desktop] run and package', function(){
     meteor_app_dir         = path.join(tests_dir, 'leaderboard');
     meteor_electrified_dir = path.join(meteor_app_dir, '.desktop');
     packages_dir           = path.join(meteor_app_dir, 'packages');
-    desktop_dir          = path.join(packages_dir, 'arboleya-desktop');
+    desktop_dir          = path.join(packages_dir, 'universe-desktop');
     
     var name = 'my-electrified-app';
     var plat = process.platform;
@@ -88,12 +88,12 @@ describe('[desktop] run and package', function(){
           stdio: stdio_config
         }).on('exit', function(){
 
-          // add desktop package
-          spawn(meteor_bin, ['add', 'arboleya:desktop'], {
-            cwd: meteor_app_dir,
-            stdio: stdio_config,
-            env: process.env
-          }).on('exit', done);
+          // // add desktop package
+          // spawn(meteor_bin, ['add', 'universe:desktop'], {
+          //   cwd: meteor_app_dir,
+          //   stdio: stdio_config,
+          //   env: process.env
+          // }).on('exit', done);
         });
       });
       

@@ -1,6 +1,6 @@
-# Desktop [![windows](https://img.shields.io/appveyor/ci/arboleya/desktop.svg?label=windows)](https://ci.appveyor.com/project/arboleya/desktop) [![travis](https://img.shields.io/travis/arboleya/desktop/master.svg?label=osx/linux)](https://travis-ci.org/arboleya/desktop) [![coverage](https://img.shields.io/codeclimate/coverage/github/arboleya/desktop.svg)](https://codeclimate.com/github/arboleya/desktop/coverage) [![join the chat at https://gitter.im/arboleya/desktop](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/arboleya/desktop)
+# Universe Desktop App
 
-Easily package your Meteor apps with Electron, and *butter*.
+Easily package your Meteor apps with Electron.
 
 ## Installation locally
 
@@ -10,13 +10,10 @@ meteor npm install --save-dev universe-desktop-app
 ````
 
 ## Installation globally
-````shell
-npm install -g universe-desktop-app
-```
 
 Now, You should add to your package.json on the end of section `scripts` following line:
 ```
-"desktop": "desktop"
+"desktop": "desktop-app"
 ```
 
 So, everything should look like this example: 
@@ -24,7 +21,7 @@ So, everything should look like this example:
 ...
 "scripts": {
     "start": "meteor --settings=settings.json"
-    "desktop": "desktop --settings=settings.json"
+    "desktop": "desktop-app --settings=settings.json"
   },
 ...
 ```
@@ -43,7 +40,7 @@ Works on all Meteor's supported [platforms](https://github.com/meteor/meteor/wik
 ````bash
 $ meteor npm run desktop -- --help
 
-  Usage: desktop [command] [options]
+  Usage: desktop-app [command] [options]
 
   Commands:
 
@@ -64,13 +61,13 @@ $ meteor npm run desktop -- --help
     # cd into meteor dir first
     cd /your/meteor/app
 
-    desktop
-    desktop run
-    desktop package
-    desktop package -o /dist/dir
-    desktop package -o /dist/dir -s file.json
-    desktop package -i /app/dir -o /dist/dir -s dev.json
-    desktop package -- <electron-packager-options>
+    desktop-app
+    desktop-app run
+    desktop-app package
+    desktop-app package -o /dist/dir
+    desktop-app package -o /dist/dir -s file.json
+    desktop-app package -i /app/dir -o /dist/dir -s dev.json
+    desktop-app package -- <electron-packager-options>
 
     # more info about electron packager options:
     # ~> https://www.npmjs.com/package/electron-packager
@@ -87,7 +84,7 @@ meteor npm run desktop
 
 ````shell
 cd /your/meteor/app
-desktop package
+desktop-app package
 ````
 
 The packaging process is done under the hood using `electron-packager`
@@ -103,7 +100,7 @@ arguments directly to `electron-packager` after `--`, i.e:
 
 ````shell
 cd /your/meteor/app
-desktop package -- --icon=/folder/x/img/icon.png --version=x.y.z
+desktop-app package -- --icon=/folder/x/img/icon.png --version=x.y.z
 ````
 
 All the available options for `electron-packager` can be found here:
@@ -239,8 +236,8 @@ Then, in your Meteor code (client and server), you can call this method like:
 
 ````javascript
 // Desktop.call(method_name, args, done_callback);
-Desktop.call('hello.world', ['anderson', 'arboleya'], function(err, msg) {
-  console.log(msg); // Hello anderson arboleya!
+Desktop.call('hello.world', ['anderson', 'universe'], function(err, msg) {
+  console.log(msg); // Hello anderson universe!
 });
 ````
 
@@ -281,7 +278,7 @@ Always keep the same desktop version in your Meteor, and inside the
 
 Do not open issues, use the chat channel instead.
 
-[![Join the chat at https://gitter.im/arboleya/desktop](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/arboleya/desktop)
+[![Join the chat at https://gitter.im/universe/desktop](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/universe/desktop)
 
 ## Problems?
 
@@ -296,5 +293,4 @@ the version of Meteor and Desktop, and any other info you may find usefull.
 ## License
 
 The MIT License (MIT)
-
-Copyright (c) 2015 Anderson Arboleya
+This package is forked from electrify package by Anderson Arboleya, (provided under MIT)

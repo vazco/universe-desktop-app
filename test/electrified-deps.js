@@ -23,7 +23,7 @@ describe('[desktop] .electrified dependencies', function(){
 
   var meteor_app_dir    = path.join(tests_dir, 'leaderboard');
   var packages_dir      = path.join(meteor_app_dir, 'packages');
-  var desktop_pkg_dir = path.join(packages_dir, 'arboleya-desktop');
+  var desktop_pkg_dir = path.join(packages_dir, 'universe-desktop');
   
   var desktop_dir = path.join(meteor_app_dir, '.desktop');
 
@@ -61,7 +61,7 @@ describe('[desktop] .electrified dependencies', function(){
         stdio: stdio_config
       }).on('exit', function(){
         // add desktop package
-        spawn(meteor_bin, ['add', 'arboleya:desktop'], {
+        spawn(meteor_bin, ['add', 'universe:desktop'], {
           cwd: meteor_app_dir,
           stdio: stdio_config,
           env: _.extend({DEVDESKTOP: true}, process.env)

@@ -7,7 +7,6 @@ var program   = require('commander');
 var spawn     = require('child_process').spawn;
 var log       = console.log;
 var _         = require('lodash');
-var shell     = require('shelljs');
 
 program
   .usage('[command] [options]')
@@ -125,24 +124,6 @@ function desktop(create) {
   if(program.output && !fs.existsSync(program.output)) {
     console.error('output folder doesn\'t exist\n  ' + program.output);
     process.exit();
-  }
-
-  // if desktop folder doesn't exist
-  if(create) {
-
-    // get list of meteor installed packages
-    var list = fs.readFileSync(join(input, '.meteor', 'packages'), 'utf-8');
-
-    // check if desktop is installed
-    if(!/^\s*arboleya:desktop\s*$/gm.test(list)) {
-
-      // if its not installed, install it
-      var pwd = shell.pwd();
-      
-      shell.cd(input);
-      shell.exec('meteor add arboleya:desktop');
-      shell.cd(pwd);
-    }
   }
 
   return require('..')(
