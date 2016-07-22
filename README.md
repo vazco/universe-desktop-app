@@ -9,8 +9,6 @@ cd /your/meteor/app
 meteor npm install --save-dev universe-desktop-app
 ````
 
-## Installation globally
-
 Now, You should add to your package.json on the end of section `scripts` following line:
 ```
 "desktop": "desktop-app"
@@ -212,45 +210,7 @@ app.on('ready', function() {
 
 
 // ....
-
-````
-
-## Meteor x Electron integration
-
-You can seamlessly call Electron methods from your Meteor's client/server code.
-
-Define your Electron methods inside the `.desktop` folder:
-
-````javascript
-// `.desktop/index.js` file
-desktop.methods({
-  'hello.world': function(firstname, lastname, done) {
-    // do things with electron api, and then call the `done` callback
-    // as ~> done(err, res);
-    done(null, 'Hello '+ firstname +' '+ lastname +'!');
-   }
-});
-````
-
-Then, in your Meteor code (client and server), you can call this method like:
-
-````javascript
-// Desktop.call(method_name, args, done_callback);
-Desktop.call('hello.world', ['anderson', 'universe'], function(err, msg) {
-  console.log(msg); // Hello anderson universe!
-});
-````
-
-> **IMPORTANT**
-> 
-> You can only call methods after the connection is made between Meteor and
-> Electron, to make sure it's ready you can wrap your code in a startup block:
-> 
-> ````javascript
-> Desktop.startup(function(){
->   Desktop.call(...);
-> });
-> ````
+```
 
 ## Upgrading
 
@@ -263,32 +223,6 @@ Once these files exists on disk, they *will not* be overwritten.
  * `.desktop/package.json`
  * `.desktop/desktop.json`
  * `.desktop/.gitignore.json`
-
-### ~> api
-
-As these files above is never overwritten, in case of any API change that needs
-adjustments, these will have to be made manually.
-
-### ~> version matching
-
-Always keep the same desktop version in your Meteor, and inside the
-`.desktop` folder, *as per specified in `.desktop/package.json` file*.
-
-## Questions?
-
-Do not open issues, use the chat channel instead.
-
-[![Join the chat at https://gitter.im/universe/desktop](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/universe/desktop)
-
-## Problems?
-
-This is very young and active software, so make sure your are always up to date
-before opening an issue. Follow the released fixes through the
-[HISTORY.md](HISTORY.md) file.
-
-If you find any problem, please open a meaningful issue describing in detail how
-to reproduce the problem, which platform/os/arch type you're using, as well as
-the version of Meteor and Desktop, and any other info you may find usefull.
 
 ## License
 
