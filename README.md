@@ -24,10 +24,6 @@ So, everything should look like this example:
 ...
 ```
 
-> For invoking Electron methods from Meteor, you'll also need to install the
-> `universe:desktop-app` meteor package.
-> For more info check [Meteor x Electron integration](#meteor-x-electron-integration).
-
 
 ## Compatibility
 
