@@ -1,6 +1,7 @@
 # Universe Desktop App
 
 Easily package your Meteor apps with Electron.
+Using this package you can build one project which can be both regular meteor app and a offline application for desktop
 
 ## Installation locally
 
