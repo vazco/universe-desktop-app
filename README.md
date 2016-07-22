@@ -67,7 +67,7 @@ $ meteor npm run desktop -- --help
     # ~> https://www.npmjs.com/package/electron-packager
 ````
 
-## Running app
+### Running app
 
 ````shell
 cd /your/meteor/app
@@ -76,9 +76,25 @@ meteor npm run desktop
 
 ## Packaging
 
+You should add to your package.json on the end of section `scripts` following line:
+```
+"build-desktop": "desktop-app package"
+```
+So, everything should look like this example: 
+```json
+...
+"scripts": {
+    "start": "meteor --settings=settings.json",
+    "desktop": "desktop-app --settings=settings.json",
+    "build-desktop": "desktop-app package --settings=settings.json"
+  },
+...
+```
+
+### Launch build
 ````shell
 cd /your/meteor/app
-desktop-app package
+npm run build-desktop
 ````
 
 The packaging process is done under the hood using `electron-packager`
@@ -175,7 +191,7 @@ Let's see how one would be able to do a simple SplashScreen:
 ````javascript
 var app       = require('app');
 var browser   = require('browser-window');
-var desktop = require('desktop')(__dirname);
+var desktop = require('universe-desktop-app')(__dirname);
 
 var window = null;
 var splash = null; // splash variable
