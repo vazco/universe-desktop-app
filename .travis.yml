@@ -1,0 +1,20 @@
+language: node_js
+
+node_js:
+  - "0.10.40"
+
+os:
+  - linux
+  - osx
+
+before_install:
+  - curl https://install.meteor.com | /bin/sh
+  - export PATH="$HOME/.meteor:$PATH"
+
+install:
+  - npm install
+  - node --version
+  - meteor --version
+
+script:
+  - node make.js test.cover.send
