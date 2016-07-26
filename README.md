@@ -7,7 +7,7 @@ Using this package you can build one project which can be both regular meteor ap
 
 ````shell
 cd /your/meteor/app
-meteor npm install --save-dev universe-desktop-app
+meteor npm install --save universe-desktop-app
 ````
 
 Now, You should add to your package.json on the end of section `scripts` following line:
