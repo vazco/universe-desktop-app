@@ -1,4 +1,8 @@
-# Universe Desktop App
+<h1 align="center">
+    <a href="https://github.com/vazco">vazco</a>/Universe Desktop App
+</h1>
+
+&nbsp;
 
 Easily package your Meteor apps with Electron.
 Using this package you can build one project which can be both regular meteor app and a offline application for desktop
@@ -239,5 +243,8 @@ Once these files exists on disk, they *will not* be overwritten.
 
 ## License
 
-The MIT License (MIT)
-This package is forked from desktop package by Anderson Arboleya, (provided under MIT)
+This package is forked from desktop package by Anderson Arboleya (provided under MIT).
+
+<img src="https://vazco.eu/banner.png" align="right">
+
+**Like every package maintained by [Vazco](https://vazco.eu/), Universe Desktop App is [MIT licensed](https://github.com/vazco/uniforms/blob/master/LICENSE).**
